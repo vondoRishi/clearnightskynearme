@@ -77,7 +77,7 @@ L.heatLayer(data, {radius: 50}).addTo(this);
 }
 
 # download.file('http://leaflet.github.io/Leaflet.heat/dist/leaflet-heat.js', '/srv/shiny-server/leaflet-heat.js', mode="wb")
-heatPluginFile <- htmlDependency("Leaflet.heat", "99.99.99",
+heatPluginFile <- htmltools::htmlDependency("Leaflet.heat", "99.99.99",
                                  src = c(file = normalizePath('/srv/shiny-server')),  script = "leaflet-heat.js"
 )
 
