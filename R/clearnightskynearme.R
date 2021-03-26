@@ -5,7 +5,7 @@ clearnightskynearme <- function(cityList=NULL) {
     if(is.null(vars)) {
         vars <- list(
             "Your location"=NULL,
-            "Helsinki" = "24.93545,60.16952",
+            # "Helsinki" = "24.93545,60.16952",
             "Turku" = "22.0841291,60.431959",
             "Stockholm" = "17.8419722,59.3260668",
             "Tampere" = "23.78712,61.49911",
