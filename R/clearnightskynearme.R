@@ -25,8 +25,8 @@ clearnightskynearme <- function(cityList=NULL) {
                     sliderInput(
                         "distance",
                         "Distance",
-                        min = 10,
-                        max = 500,
+                        min = 25,
+                        max = 100,
                         value = 100
                     ),
                     textOutput("result")
