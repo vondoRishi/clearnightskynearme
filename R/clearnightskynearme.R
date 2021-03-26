@@ -88,7 +88,7 @@ clearnightskynearme <- function(cityList=NULL) {
             if(!is.null(user_locate()$geolocation)) {
                 vars[["Your location"]] <-paste(user_locate()$lon,user_locate()$lat,sep=",")
             } else {
-                vars[["Your location"]]<- NULL
+                vars[["Your location"]]<- ""
             }
             updateSelectInput(session,
                               "city",
@@ -102,7 +102,6 @@ clearnightskynearme <- function(cityList=NULL) {
         mapData <- reactive({
             city_location <- list(lon=city_coor()[[1]][1],
                                   lat=city_coor()[[1]][2])
-            # print(paste("mapData",city_location))
             if(!is.na(city_location$lon)) {
                 progress <- Progress$new(session, min = 1, max = 15)
                 on.exit(progress$close())
