@@ -16,10 +16,11 @@ clearnightskynearme <- function(cityList=NULL) {
 
     ui <- navbarPage(
         "Clear Night Sky",
-        id = "nav",
+        id = "nav",collapsible = TRUE,
         tabPanel(
             "Interactive map",
             sidebarLayout(
+              mainPanel(leaflet::leafletOutput("map")),
                 sidebarPanel(
                     selectInput("city", "Cities", NULL),
                     sliderInput(
@@ -30,8 +31,7 @@ clearnightskynearme <- function(cityList=NULL) {
                         value = 100
                     ),
                     textOutput("result")
-                ),
-                mainPanel(leaflet::leafletOutput("map"))
+                )
             )
         ),
         tabPanel("Cloud data",
@@ -125,15 +125,15 @@ clearnightskynearme <- function(cityList=NULL) {
              DT::datatable(mapData()$cloud_data)
          })
 
-        output$result <- renderText({
-            paste(
-                "Your location",
-                user_locate()
-                # ,
-                # "user_location",
-                # user_locate
-            )
-        })
+        # output$result <- renderText({
+        #     paste(
+        #         "Your location",
+        #         user_locate()
+        #         # ,
+        #         # "user_location",
+        #         # user_locate
+        #     )
+        # })
     }
 
     shiny::shinyApp(ui, server)
