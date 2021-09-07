@@ -1,0 +1,39 @@
+---
+title: "App Readme"
+output: html_document
+---
+
+# How to built an app with reactive native
+
+## Follow the [tutorial](https://reactnative.dev/docs/getting-started)
+
+This section explain basic components
+
+## Follow the [youtube video](https://www.youtube.com/watch?v=9ACpqQR3lQg&list=PL8kfZyp--gEXs4YsSLtB3KqDtdOFHMjWZ&ab_channel=ProgrammingwithMash)
+
+### [environment-setup](https://reactnative.dev/docs/environment-setup)
+
+Follow the "React Native CLI Quickstart"
+
+#### To start  
+
+* Open VS code  
+    * Go to project space  
+* Open 1st terminal > npx react-native start  
+* Split screen 2nd terminal > emulator -avd Pixel_4_XL_API_29_Note7Pro  
+    * look for small icon next to first terminal  
+* Open 3rd terminal > npx react-native run-android  
+
+
+#### VS Code Plugins
+
+* Snippets  
+* React Native Tools  
+* Color Highlight  
+* Bracket Pair Colorizer  
+* npm Intellisense  
+* GitLens  
+
+### Dropdown
+
+Install from https://github.com/react-native-picker/picker
