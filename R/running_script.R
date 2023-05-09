@@ -15,7 +15,7 @@ city_location <- list(lon=24.93545,lat=60.16952) #Helsinki
 Lappeenranta <- list(lon=28.18871,lat=61.05871)
 distance <- 100*1000 # in meteres
 # cloud_threshold <- 50
-# mapData <- serVerLogic(user_location = Lappeenranta,distance = distance)
+# mapData <- clearnightskynearme:::serVerLogic(user_location = Lappeenranta,distance = distance)
 # mapData$leaf_map
 
-# getLeafletMap(mapData$cloud_data)
+# clearnightskynearme:::getLeafletMap(mapData$cloud_data)
