@@ -8,7 +8,7 @@ The goal of clearnightskynearme is to identify the time and location of clearest
 
 ## Installation
 
-You can install the released version of clearnightskynearme from [CRAN](https://CRAN.R-project.org) with:
+You can install the released version of clearnightskynearme with:
 
 ``` r
 if (!requireNamespace("devtools")) {
