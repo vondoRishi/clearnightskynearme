@@ -34,7 +34,9 @@ serVerLogic <- function(user_location, distance) {
 #' @import leaflet
 #' @importFrom dplyr %>%
 getLeafletMap <- function(dataMinCloud) {
-    myMap <- leaflet(dataMinCloud) %>% addTiles() %>% addCircleMarkers(
+    myMap <- leaflet(dataMinCloud) %>%
+        # registerPlugin(heatPlugin) %>%
+        addTiles() %>% addCircleMarkers(
         lng = ~ lon,
         lat = ~ lat,
         group = "Grid",
@@ -56,7 +58,6 @@ getLeafletMap <- function(dataMinCloud) {
             max(dataMinCloud$lon),
             max(dataMinCloud$lat)
         ) %>%
-        registerPlugin(heatPluginFile) %>%
         htmlwidgets::onRender(
             "function(el, x, data) {
     data = HTMLWidgets.dataframeToD3(data);
@@ -77,14 +78,15 @@ L.heatLayer(data, {radius: 50}).addTo(this);
 }
 
 # download.file('http://leaflet.github.io/Leaflet.heat/dist/leaflet-heat.js', '/srv/shiny-server/leaflet-heat.js', mode="wb")
-heatPluginFile <- htmltools::htmlDependency("Leaflet.heat", "99.99.99",
-                                 src = c(file = normalizePath('/srv/shiny-server')),  script = "leaflet-heat.js"
-)
-
-heatPlugin <- htmltools::htmlDependency("Leaflet.heat", "99.99.99",
-                             src = c(href = "http://leaflet.github.io/Leaflet.heat/dist/"),
-                             script = "leaflet-heat.js"
-)
+# heatPluginFile <- htmltools::htmlDependency("Leaflet.heat", "99.99.99",
+#                                  src = c(file = normalizePath('/srv/shiny-server')),
+#                                  script = "leaflet-heat.js"
+# )
+#
+# heatPlugin <- htmltools::htmlDependency("Leaflet.heat", "99.99.99",
+#                              src = c(href = "http://leaflet.github.io/Leaflet.heat/dist/"),
+#                              script = "leaflet-heat.js"
+# )
 
 registerPlugin <- function(map, plugin) {
     map$dependencies <- c(map$dependencies, list(plugin))

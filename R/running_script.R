@@ -1,5 +1,15 @@
 ## USER input ##
 # owmr::owm_cities %>% dplyr::filter(countryCode=="FI" & nm=="Helsinki") %>% head()
+# owmr::owm_cities %>% dplyr::filter(countryCode=="FI" & nm %in% c("Helsinki","Tampere","Turku","Lappeenranta","Oulu")) %>% head()
+
+cities <-  owmr::owm_cities %>%
+    dplyr::filter(countryCode=="FI" &
+                      nm %in% c("Helsinki","Tampere","Turku","Lappeenranta","Oulu"))
+cityList <- list()
+for (i in 1:nrow(cities)) {
+    city <- cities[i,]
+    cityList[city$nm]<-paste(city$lon,city$lat)
+}
 
 cityList <- list(
     "Helsinki" = "24.93545,60.16952",

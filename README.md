@@ -4,7 +4,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of clearnightskynearme is to ...
+The goal of clearnightskynearme is to identify the time and location of clearest night sky near user given distance. This will be useful for sky gazing.
 
 ## Installation
 
@@ -24,17 +24,6 @@ This depends on [owmr](https://crazycapivara.github.io/owmr/) package which furt
 User needs to register and get their own api key. Then follow below instruction to setup the api key.
 
 
-``` r
-library(owmr)
-
-# first of all you have to set up your api key
-owmr_settings("your_api_key")
-
-# or store it in an environment variable called OWM_API_KEY (recommended)
-Sys.setenv(OWM_API_KEY = "your_api_key") # if not set globally
-```
-
-
 ## Example
 
 This is a basic example which shows you how to solve a common problem:
@@ -42,5 +31,7 @@ This is a basic example which shows you how to solve a common problem:
 ``` r
 library(clearnightskynearme)
 ## basic example code
+clearnightskynearme(apikey = "api_key")
 ```
 
+![](clearnightskynearme.png)

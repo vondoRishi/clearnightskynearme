@@ -1,11 +1,12 @@
 #' @import shiny
 #' @export
-clearnightskynearme <- function(cityList=NULL) {
+clearnightskynearme <- function(apikey=NULL,cityList=NULL) {
+    owmr::owmr_settings(apikey)
     vars <- cityList
     if(is.null(vars)) {
         vars <- list(
             "Your location"=NULL,
-            # "Helsinki" = "24.93545,60.16952",
+            "Helsinki" = "24.93545,60.16952",
             "Turku" = "22.0841291,60.431959",
             "Stockholm" = "17.8419722,59.3260668",
             "Tampere" = "23.78712,61.49911",
@@ -13,14 +14,21 @@ clearnightskynearme <- function(cityList=NULL) {
             "Lappeenranta" =  "28.18871,61.05871"
         )
     }
+    heatPlugin <- htmltools::htmlDependency("Leaflet.heat", "99.99.99",
+                                            src = c(href = "http://leaflet.github.io/Leaflet.heat/dist/"),
+                                            script = "leaflet-heat.js"
+    )
 
     ui <- navbarPage(
         "Clear Night Sky",
         id = "nav",collapsible = TRUE,
+
         tabPanel(
             "Interactive map",
             sidebarLayout(
-              mainPanel(leaflet::leafletOutput("map")),
+              mainPanel(
+                  htmltools::attachDependencies(
+                      leaflet::leafletOutput("map"),heatPlugin,append = TRUE)),
                 sidebarPanel(
                     selectInput("city", "Cities", NULL),
                     sliderInput(
