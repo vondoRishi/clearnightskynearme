@@ -1,6 +1,7 @@
 #' @import shiny
 #' @export
 clearnightskynearme <- function(apikey=NULL,cityList=NULL) {
+    stopifnot("Not an real api key" = nchar(apikey)>10)
     owmr::owmr_settings(apikey)
     vars <- cityList
     if(is.null(vars)) {

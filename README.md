@@ -21,7 +21,7 @@ devtools::install_github("vondoRishi/clearnightskynearme")
 ## Setup  
 
 This depends on [owmr](https://crazycapivara.github.io/owmr/) package which further depends on [openweathermap.org](https://openweathermap.org/api/) .
-User needs to register and get their own api key. Then follow below instruction to setup the api key.
+User needs to register and get their own api key (api_key). Then follow below instruction to pass your registered api_key.
 
 
 ## Example
@@ -30,8 +30,9 @@ This is a basic example which shows you how to solve a common problem:
 
 ``` r
 library(clearnightskynearme)
-## basic example code
-clearnightskynearme(apikey = "api_key")
+## basic example code, replace api_key with your own which will be a long character string.
+clearnightskynearme(apikey = "api_key") 
+
 ```
 
 ![](clearnightskynearme.png)
