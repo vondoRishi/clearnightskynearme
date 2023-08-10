@@ -4,10 +4,11 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of clearnightskynearme is to identify the time and location of clearest night sky near user given distance. This will be useful for sky gazing.
+The goal of clearnightskynearme is to identify the time and location of the clearest night sky near user's given distance. This will be useful for sky gazing.
 
 ## Installation
 
+*Requirement*: [R](https://www.r-project.org/) should be installed on your computer.  
 You can install the released version of clearnightskynearme with:
 
 ``` r
